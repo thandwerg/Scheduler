@@ -1,5 +1,5 @@
 # Scheduler
-Takes the input of a students name, session, and needed classes and attempts to assign them to a valid schedule at SunEd N Broward.
+Takes the input of a students name, session, and needed classes and attempts to assign them to a valid schedule at School X.
 
 Keeps track of the number of students assigned to each period for each class and tries to put students in the least crowded ones. 
 Attempts to schedule classes one at a time in this fashion in random order until a valid schedule is produced.
