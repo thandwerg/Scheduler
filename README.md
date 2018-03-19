@@ -3,7 +3,7 @@
 
 
 
-#scheduler - Takes the input of a students name, session, and needed classes and attempts to
+# scheduler - Takes the input of a students name, session, and needed classes and attempts to
 #           assign them to a valid schedule at School X.
 
 #           Keeps track of the number of students assigned to each period for each class and
@@ -26,20 +26,19 @@ from random import shuffle
 os.chdir('C:\\Programs')
 
 
-###this creates the roomcount variables
-##shelfFile = shelve.open('periodcounter')
-##rooms=['112','113','114','115','108','109']
-##periodlist = []
-##for x in rooms: #rooms got deleted so it needs to be fixed if remaking
-##    for y in range(1,7):s
-##          periodlist.append('%sPeriod%sAM'% (x, str(y)))
-##    for z in range(1,7):
-##            periodlist.append('%sPeriod%sPM'% (x, str(z)))
-##    for x in periodlist:
-##        shelfFile[x]=0
-##
-##print(list(shelfFile.keys()))
-##print(list(shelfFile.values()))
+# this creates the roomcount variables
+# shelfFile = shelve.open('periodcounter')
+# rooms=['112','113','114','115','108','109']
+# periodlist = []
+# for x in rooms: #rooms got deleted so it needs to be fixed if remaking
+#    for y in range(1,7):s
+#          periodlist.append('%sPeriod%sAM'% (x, str(y)))
+#    for z in range(1,7):
+#            periodlist.append('%sPeriod%sPM'% (x, str(z)))
+#    for x in periodlist:
+#        shelfFile[x]=0
+# print(list(shelfFile.keys()))
+# print(list(shelfFile.values()))
 
 
 
