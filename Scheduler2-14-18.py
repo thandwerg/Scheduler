@@ -3,7 +3,7 @@
 
 
 #scheduler - Takes the input of a students name, session, and needed classes and attempts to
-#           assign them to a valid schedule at SunEd N Broward.
+#           assign them to a valid schedule at School X.
 
 #           Keeps track of the number of students assigned to each period for each class and
 #           tries to put students in the least crowded ones. Attempts to schedule classes
@@ -44,24 +44,22 @@ os.chdir('C:\\Programs')
 classinfo = [
             {'subject':'Reading 1', 'room':'114', 'periods':[1,3,4,6], 'teacher':'Mrs. Kat'}, # This list of dictionaries hold all the info for the school schedule setup.
                                                                                             
-            {'subject':'Reading 2', 'room':'108', 'periods':[3,4],'teacher':'Mr. Baker/Mrs. Grayson'},
-            {'subject':'Leyendo PM', 'room':'114', 'periods':[1,2,3,4], 'teacher':'Mrs. Kat'},
-            {'subject':'Government', 'room':'108', 'periods':[5,6],'teacher':'Mrs. Grayson'},
-            {'subject':'Music Appreciation', 'room':'108', 'periods':[5],'teacher':'Mrs. Grayson'},
-            {'subject':'English', 'room':'109', 'periods':[1,2,3,4,5,6],'teacher':'Mr. Buniao, Mr. Handwerg'},
-            {'subject':'Math1', 'room':'112', 'periods':[3,4,5,6],'teacher':'Mr. Thomsen'},
-            {'subject':'Math2', 'room':'112', 'periods':[1,2],'teacher':'Mr. Thomsen'},
-            {'subject':'Chemistry', 'room':'112', 'periods':[1,2,3,4],'teacher':'Mr. Thomsen'},
-            {'subject':'Science', 'room':'113', 'periods':[3,4,5,6],'teacher':'Ms. Burzinski'},
-            
-            {'subject':'Ciencias PM', 'room':'113', 'periods':[1,2,3,4,5,6],'teacher':'Ms. Burzinski'},
-            
-            {'subject':'History', 'room':'113', 'periods':[1,2,3,4,5,6],'teacher':'Mr. Franz'},
-            {'subject':'Historia PM', 'room':'113', 'periods':[1,2,3,4],'teacher':'Mr. Franz'},
-            {'subject':'Career', 'room':'115', 'periods':[1,2,5,6],'teacher':'Mr. Baker'},
-            {'subject':'Trabajo PM', 'room':'115', 'periods':[1,2],'teacher':'Mr. Baker'},
-            {'subject':'Elective', 'room':'115', 'periods':[1,2,3,4,5,6],'teacher':'Mr. Powers'},
-            {'subject':'HOPE', 'room':'109', 'periods':[3,4,5,6],'teacher':'Mr. Handwerg'},
+            {'subject':'Reading 2', 'room':'108', 'periods':[3,4],'teacher':'Mr. A/Mrs. B'},
+            {'subject':'Leyendo PM', 'room':'114', 'periods':[1,2,3,4], 'teacher':'Mrs. C'},
+            {'subject':'Government', 'room':'108', 'periods':[5,6],'teacher':'Mrs. D'},
+            {'subject':'Music Appreciation', 'room':'108', 'periods':[5],'teacher':'Mrs. E'},
+            {'subject':'English', 'room':'109', 'periods':[1,2,3,4,5,6],'teacher':'Mr. F, Mr. G'},
+            {'subject':'Math1', 'room':'112', 'periods':[3,4,5,6],'teacher':'Mr. H'},
+            {'subject':'Math2', 'room':'112', 'periods':[1,2],'teacher':'Mr. I'},
+            {'subject':'Chemistry', 'room':'112', 'periods':[1,2,3,4],'teacher':'Mr. J'},
+            {'subject':'Science', 'room':'113', 'periods':[3,4,5,6],'teacher':'Ms. K'},
+            {'subject':'Ciencias PM', 'room':'113', 'periods':[1,2,3,4,5,6],'teacher':'Ms. L'},
+            {'subject':'History', 'room':'113', 'periods':[1,2,3,4,5,6],'teacher':'Mr. M'},
+            {'subject':'Historia PM', 'room':'113', 'periods':[1,2,3,4],'teacher':'Mr. N'},
+            {'subject':'Career', 'room':'115', 'periods':[1,2,5,6],'teacher':'Mr. O'},
+            {'subject':'Trabajo PM', 'room':'115', 'periods':[1,2],'teacher':'Mr. P'},
+            {'subject':'Elective', 'room':'115', 'periods':[1,2,3,4,5,6],'teacher':'Mr. Q'},
+            {'subject':'HOPE', 'room':'109', 'periods':[3,4,5,6],'teacher':'Mr. R'},
             ]
 
 
@@ -74,10 +72,7 @@ def scheduler(name,am, room): #defines the main function of the program. This fu
     for x in room:  
         inputlist.append(x) #converts room argument into a list
     am = am[0] #converts list to string
-##    loopbreaker1 = 0
-##    loopbreaker2 = 0
-##    loopbreaker3 = 0
-##         
+
     
 
   
@@ -116,10 +111,6 @@ def scheduler(name,am, room): #defines the main function of the program. This fu
                 
                 while info['subject'] not in str(sp): #loop that attempts to assign the reading class to the least crowded period. 
 
-##                    nonlocal loopbreaker1
-##                    loopbreaker1 += 1 #loopbreaker. Stops it from going into an infinite loop if it cant schedule.    
-##                    if loopbreaker1>40:    
-##                        return
 
                     lowest = classvalues.index(min(classvalues)) #finds the class with the least number of students
                     if sp[lowest] == 'empty':
@@ -152,7 +143,7 @@ def scheduler(name,am, room): #defines the main function of the program. This fu
                     else:
                         classvalues[lowest] += 100 #temporarily inflates the student count for the lowest slot so it doesnt get picked again
 
-############
+
             elif (inputs ==  info['subject']) and ('Reading 2' in inputs): #assignment of reading 1 class
                 
                 import shelve
@@ -168,11 +159,6 @@ def scheduler(name,am, room): #defines the main function of the program. This fu
                        
                 
                 while info['subject'] not in str(sp): #loop that attempts to assign the reading class to the least crowded period. 
-
-##                    nonlocal loopbreaker2
-##                    loopbreaker2 += 1 #loopbreaker. Stops it from going into an infinite loop if it cant schedule.    
-##                    if loopbreaker2>40:    
-##                        return
 
                     lowest = classvalues.index(min(classvalues)) #finds the class with the least number of students
                     
@@ -197,8 +183,7 @@ def scheduler(name,am, room): #defines the main function of the program. This fu
                     else:
                         classvalues[lowest] += 100 
                         
-        
-############           
+          
             elif (inputs ==  info['subject']) and ('Leyendo PM' in inputs): #assignment of reading 1 class
                 
                 import shelve
@@ -215,10 +200,6 @@ def scheduler(name,am, room): #defines the main function of the program. This fu
                 
                 while info['subject'] not in str(sp): #loop that attempts to assign the reading class to the least crowded period. 
 
-##                    nonlocal loopbreaker2
-##                    loopbreaker2 += 1 #loopbreaker. Stops it from going into an infinite loop if it cant schedule.    
-##                    if loopbreaker2>40:    
-##                        return
 
                     lowest = classvalues.index(min(classvalues)) #finds the class with the least number of students
                     
@@ -262,11 +243,6 @@ def scheduler(name,am, room): #defines the main function of the program. This fu
                     classvalues[i-1]=shelfFile['%sPeriod%s%s' %(info['room'],str(i),am)]
                 
                 while info['subject'] not in sp:
-##                    nonlocal loopbreaker3
-##                    
-##                    loopbreaker3 += 1 #loopbreaker. Stops it from going into an infinite loop if it cant schedule.    
-##                    if loopbreaker3>40:
-##                        return
 
                     lowest = classvalues.index(min(classvalues))
 
@@ -327,12 +303,6 @@ def scheduler(name,am, room): #defines the main function of the program. This fu
             sp = ['empty','empty','empty','empty','empty','empty']
             spfinal = ['empty','empty','empty','empty','empty','empty']
 
-##    if loopbreaker1>40 or loopbreaker2>40 or loopbreaker3>40: #loopbreaker ends the function before anything permanent happens
-##        print('There was an error. It is likely an impossible schedule was submitted. Please readjust the requested classes or try again with the same ones.')
-##        
-##        
-##        return
-##
 
     for i in range(6): #increases the permanent student number counter for each class once the schedule is finalized.
         for x in range(len(classinfo)):
